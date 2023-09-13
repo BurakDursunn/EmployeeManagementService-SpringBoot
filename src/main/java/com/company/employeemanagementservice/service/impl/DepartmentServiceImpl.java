@@ -1,18 +1,13 @@
 package com.company.employeemanagementservice.service.impl;
 
 import com.company.employeemanagementservice.dto.DepartmentDto;
-import com.company.employeemanagementservice.dto.EmployeeDto;
 import com.company.employeemanagementservice.entity.Department;
-import com.company.employeemanagementservice.entity.Employee;
 import com.company.employeemanagementservice.exceptions.DepartmentNotFoundException;
 import com.company.employeemanagementservice.repository.DepartmentRepository;
-import com.company.employeemanagementservice.repository.EmployeeRepository;
 import com.company.employeemanagementservice.service.DepartmentService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -26,7 +21,6 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public DepartmentDto createDepartment(DepartmentDto departmentDto) {
         Department department = modelMapper.map(departmentDto, Department.class);
-
         return modelMapper.map(departmentRepository.save(department), DepartmentDto.class);
     }
 

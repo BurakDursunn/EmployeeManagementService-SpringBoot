@@ -15,14 +15,10 @@ public class Employee {
     private Long id;
     private String name;
     private String surname;
-
     private String email;
     private String address;
-
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
     private String bankAccountNumber;
-
-
 }
